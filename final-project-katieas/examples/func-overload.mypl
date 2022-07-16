@@ -1,0 +1,24 @@
+
+fun int f(int x, int y) {
+  var z = x + y
+  return z
+}
+
+fun double f(double x, double y) {
+  var z = x + y
+  return z
+}
+
+fun void main() {
+  var int x = 1
+  var int y = 1
+  var int z = f(x, y)
+  print(z)
+
+  print('\n')
+
+  var double a = 2.0
+  var double b = 2.0
+  var double c = f(a, b)
+  print(c)
+}

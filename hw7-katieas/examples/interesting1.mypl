@@ -1,0 +1,62 @@
+# Katie Stevens
+# Takes a number input from the user and outputs as a roman numeral
+
+fun void main() {
+    print("Enter a Number: ")
+    var num = stoi(read()) 
+
+    var romanNum = ""
+    while (num >= 1000) {
+        romanNum = romanNum + "M"
+        num = num - 1000
+    }
+    while (num >= 900) {
+        romanNum = romanNum + "CM"
+        num = num - 900
+    }
+    while (num >= 500) {
+        romanNum = romanNum + "D"
+        num = num - 500
+    }
+    while (num >= 400) {
+        romanNum = romanNum + "CD"
+        num = num - 400
+    }
+    while (num >= 100) {
+        romanNum = romanNum + "C"
+        num = num - 100
+    }
+    while (num >= 90) {
+        romanNum = romanNum + "XC"
+        num = num - 90
+    }
+    while (num >= 50) {
+        romanNum = romanNum + "L"
+        num = num - 50
+    }
+    while (num >= 40) {
+        romanNum = romanNum + "XL"
+        num = num - 40
+    }
+    while (num >= 10) {
+        romanNum = romanNum + "X"
+        num = num - 10
+    }
+    while (num >= 9) {
+        romanNum = romanNum + "IX"
+        num = num - 9
+    }
+    while (num >= 5) {
+        romanNum = romanNum + "V"
+        num = num - 5
+    }
+    while (num >= 4) {
+        romanNum = romanNum + "IV"
+        num = num - 4
+    }
+    while (num >= 1) {
+        romanNum = romanNum + "I"
+        num = num - 1
+    }
+    print(romanNum)
+}

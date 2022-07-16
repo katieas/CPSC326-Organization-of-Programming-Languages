@@ -1,0 +1,156 @@
+#----------------------------------------------------------------------
+# MyPL test file to hit different parts of the parser.
+# Only checks for valid syntax examples.
+#----------------------------------------------------------------------
+
+type EmptyNode {
+}
+
+type Node {
+  var value = 0
+  var Node next = nil
+}
+
+type KVNode {
+  var string key = ""
+  var value = 42
+  var Node KVNode = nil
+}
+
+type ExplicitTypeTest {
+  var int v = 0
+  var double w = 0.0
+  var bool x = true
+  var char y = 'a'
+  var string z = "foo"
+}
+
+type ImplicitTypeTest {
+  var v = 0
+  var w = 0.0
+  var x = true
+  var y = 'a'
+  var z = "foo"
+}
+
+fun void f1() {
+  return
+}
+
+fun int f2() {
+  return 42
+}
+
+fun void f3() {
+  var u1 = 42
+  var int u2 = 42
+  var v1 = 3.14
+  var double v1 = 3.14
+  var bool w1 = true
+  var w2 = false
+  var char x1 = 'a'
+  var x2 = 'a'
+  var string y1 = "a"
+  var y2 = "a"
+  var Node z1 = new Node
+  var Node z2 = new Node
+}
+
+fun void f4(int p1) {
+  if p1 {
+  }
+  else {
+  }
+}
+
+fun int f5(bool p1) {
+  if p1 {
+    return 42
+  }
+  return 42
+}
+
+fun int f6(int p1, int p2) {
+  if (p1 - p2) < p1 {
+    return p1
+  }
+  elif p2 >= p1 {
+    return p2
+  }
+  else {
+    return p2
+  } 
+}
+
+fun Node f7(int v1, string msg) {
+  if v1 >= 1 {
+    print(msg)
+    return new Node
+  }
+  return nil
+}
+
+fun bool f8(int p1, double p2, bool p3, char p4, string p5) {
+  for i from 1 upto 10 {
+    if i % 2 == 0 {
+      for j from 10 downto 1 {
+        if j % 2 != 0 {
+          print(i)
+
+        }
+      }
+    }
+  }
+  return true
+}
+
+fun string f9(int n) {
+  var s = ""
+  while n > 0 {
+    s = s + "a"
+    n = n + 1
+  }
+  return s
+}
+
+fun double f10(double x, double y) {
+  var r = 0.0
+  if (x < y or x == y) and x > 0 {
+    r = ((x / (x + y)) * 100) + (x * 0.1)
+  }
+  elif y > 0 {
+    r = ((y / (x + y)) * 100) + (y * 0.1)
+  }
+  else {
+    r = 100
+  }
+  return r
+}
+
+fun int f11(int x) {
+  if x < 1 {
+    return neg 1
+  }
+  elif x == 1 {
+    return 1
+  }
+  return f11(x-1) + f11(x-2) 
+}
+
+fun Node f12(Node node) {
+  if node == nil {
+    return nil
+  }
+  var copy = new Node
+  copy.value = node.value
+  copy.next = f12(node.next)
+  return copy
+}
+
+fun void f13(Node node) {
+  if node != nil {
+    f13(node.next)
+    delete node
+  }
+}
+

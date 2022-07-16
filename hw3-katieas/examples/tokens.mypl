@@ -1,0 +1,39 @@
+
+, .
+
+ + - * /  %
+
+{} ( ) 
+
+== > >= < <= !=  
+
+and or not neg
+
+  =
+
+42 3.14159 'a' 
+
+""  "hello world!" true false
+
+int bool  double char  string void
+
+var type while for from upto downto
+
+ if else elif
+
+fun  new  delete  return  nil
+
+x xs ys foo bar foobarbaz
+
+x=y>z<=u().v
+
+# examples of illegal tokens, uncomment to check that an error results:
+!!
+"hello
+  world"
+'bb'
+''
+01234
+01.23
+12abc
+

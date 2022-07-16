@@ -1,0 +1,42 @@
+# Katie Stevens
+# Calculator 
+
+fun void main() {
+    print("Enter 1st number: ")
+    var num1 = stoi(read())
+
+    print("Enter 2nd number: ")
+    var num2 = stoi(read())
+
+    var bool error = true
+
+    while (error) {
+        print("Select Operation: \n")
+        print("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n")
+        print("Enter the number of which operation to perform: ")
+        var op = stoi(read())
+
+        var int result = 0
+        if (op == 1) {
+            result = num1 + num2
+            error = false
+        }
+        elif (op == 2) {
+            result = num1 - num2
+            error = false
+        }
+        elif (op == 3) {
+            result = num1 * num2
+            error = false
+        }
+        elif (op == 4) {
+            result = num1 / num2
+            error = false
+        }
+        else {
+            print("ERROR: Please select a number from the menu\n")
+        }
+    }
+
+    print("Result: " + itos(result))
+}

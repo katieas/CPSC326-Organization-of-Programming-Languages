@@ -1,0 +1,12 @@
+#----------------------------------------------------------------------
+# Description: user-defined type declarations and path expressions
+# Requires: basic variable declarations, simple rvalue expressions,
+#           new expressions, basic function definitions (for main)
+#----------------------------------------------------------------------
+
+fun void main() {
+  var char v = get(0, "ab")
+  var int r = length("ab")
+  var string s = read()
+}
+ 

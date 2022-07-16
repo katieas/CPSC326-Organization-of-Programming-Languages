@@ -1,0 +1,34 @@
+#----------------------------------------------------------------------
+# tests of more functions and structs
+#----------------------------------------------------------------------
+
+fun int a(int x) {
+  return x + 1
+}
+
+fun int b(int y) {
+  var x = a(y)
+  return x
+}
+
+type T {
+  var x = 0
+}
+
+fun int c(int x) {
+  var t = new T
+  return t.x
+}
+
+fun string d(string par1, int par2) {
+  if (par2 > 0) and (par2 < 10) and (length(par1) != 0) {
+    return par1
+  }
+  else {
+    return itos(par2)
+  }
+}
+
+fun void main() {
+  d("foo", 1)
+}

@@ -1,0 +1,64 @@
+
+#----------------------------------------------------------------------
+# Description: user-defined type declarations and path expressions
+# Requires: basic variable declarations, simple rvalue expressions,
+#           new expressions, basic function definitions (for main)
+#----------------------------------------------------------------------
+
+type T1 {
+}
+
+type T2 {
+  var x = 0
+}
+
+type T3 {
+  var x = 0
+  var y = ""
+}
+
+type T4 {
+  var x = 0
+  var y = ""
+  var z = x
+}
+
+type T5 {
+  var x = 0
+  var T4 t = nil
+}
+
+type T6 {
+  var t1 = new T4
+  var t2 = new T5
+  var x = t1.x
+  var y = t2.t.x
+}
+
+type T7 {
+  var x = 0
+  var n = new T7   # yikes!
+}
+
+type Node {
+  var val = 0
+  var Node nxt = nil
+}
+
+fun void good_paths() {
+  var n1 = new Node
+  var Node n2 = new Node
+  var Node n3 = n1.nxt
+  n1.val = 10
+  n1.nxt = n2
+  n2.val = 20
+  n2.nxt = new Node
+  n2.nxt.val = n1.val
+  n2.nxt.nxt = new Node
+  n2.nxt.nxt.val = n2.nxt.val
+}
+
+
+fun void main() {
+}
+

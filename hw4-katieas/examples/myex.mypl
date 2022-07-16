@@ -1,0 +1,9 @@
+fun int main() {
+for i from 3*4 downto neg 1 { x = x * i }
+  
+for j
+from 0 upto fac(n) {print(j)}
+if true {
+print("true") }
+
+}

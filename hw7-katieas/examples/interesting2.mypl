@@ -1,0 +1,54 @@
+# Katie Stevens
+# Higher or Lower game
+# 2 player
+# First to 3
+
+fun void print_points(int p1, int p2) {
+    print("\n")
+    print("Player 1 points: " + itos(p1))
+    print("\n")
+    print("Player 2 points: " + itos(p2))
+    print("\n")
+    print("------------------------------------")
+    print("\n")
+}
+
+fun void main() {
+    var int p1Points = 0
+    var int p2Points = 0
+    var int p1 = nil
+    var int p2 = nil
+    while ((p1Points < 3) and (p2Points < 3)) {
+        print("Player 1 enter a number (1 - 10): ")
+        p1 = stoi(read())
+
+        print("Player 2 enter a number (1 - 10): ")
+        p2 = stoi(read())
+
+        if ((p1 > 10) or (p1 < 0) or (p2 > 10) or (p2 < 0)) { # checks if numbers are in range
+            print("you don't follow directions well... ")
+            print("\nokay try again.\n")
+        }
+        elif (p1 > p2) {
+            print("Player 1's number was higher! Player 1 gets a point!")
+            p1Points = p1Points + 1
+            print_points(p1Points, p2Points)
+        }
+        elif (p1 < p2) {
+            print("Player 2's number was higher! Player 2 gets a point!")
+            p2Points = p2Points + 1
+            print_points(p1Points, p2Points)
+        }
+        else { # if they are the same
+            print("Player 1 and Player 2 Tied! Try again.")
+            print("\n")
+        }
+    }
+    # announce winner
+    if (p1 > p2) {
+        print("Player 1 wins!")
+    }
+    else {
+        print("Player 2 wins!")
+    }
+}

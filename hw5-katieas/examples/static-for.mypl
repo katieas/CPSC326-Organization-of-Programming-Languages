@@ -1,0 +1,47 @@
+
+#----------------------------------------------------------------------
+# Description: basic for-loop passing tests
+# Requires:    basic function and variable declarations, simple rvalue
+#              expressions
+#----------------------------------------------------------------------
+
+fun void main() {
+
+  var x = ""
+  var y = ""
+
+  #--------------------
+  # passing tests
+  #--------------------
+  
+  for x from 1 upto 10 {
+  }
+
+  for x from 10 downto 1 {
+    var y = 20 
+  }
+
+  for x from 1 upto 10 {
+    var y = 10
+    var z = 20
+    # note: var x = 30 is not legal (shadowing in current environment)
+  }
+
+  for i from 1 upto 10 {
+    var x = 20
+    for j from 11 downto 1 {
+    }
+  }
+  
+  for x from 1 upto 10 {
+    for x from 11 downto 20 {
+    }
+  }
+
+  for x from 1 upto 10 {
+    # x in "downto x" is in parent scope
+    for x from 11 downto x {  
+    }
+  }
+
+}
