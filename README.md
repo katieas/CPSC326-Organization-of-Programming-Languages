@@ -1,4 +1,4 @@
-# CPSC326-Programming-Languages
+# CPSC326- Organization of Programming Languages
 
 HW1 - Introduced to MYPL and the compiling process. Simple program.
 
